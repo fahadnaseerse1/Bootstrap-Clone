@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Build fast, responsive sites with Bootstrap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="i-github" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+        />
+      </symbol>
+      <symbol id="i-twitter-x" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+        />
+      </symbol>
+      <symbol id="i-opencollective" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          fill-opacity=".4"
+          d="M12.995 8.195c0 .937-.312 1.912-.78 2.693l1.99 1.99c.976-1.327 1.6-2.966 1.6-4.683 0-1.795-.624-3.434-1.561-4.76l-2.068 2.028c.468.781.78 1.679.78 2.732z"
+        />
+        <path
+          d="M8 13.151a4.995 4.995 0 1 1 0-9.99c1.015 0 1.951.273 2.732.82l1.95-2.03a7.805 7.805 0 1 0 .04 12.449l-1.951-2.03a5.07 5.07 0 0 1-2.732.781z"
+        />
+      </symbol>
+      <symbol id="i-braces" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.362-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6"
+        />
+      </symbol>
+      <symbol id="i-palette2" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M0 .5A.5.5 0 0 1 .5 0h5a.5.5 0 0 1 .5.5v5.277l4.147-4.131a.5.5 0 0 1 .707 0l3.535 3.536a.5.5 0 0 1 0 .708L10.261 10H15.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5H3a3 3 0 0 1-2.121-.879A3 3 0 0 1 0 13.044m6-.21 7.328-7.3-2.829-2.828L6 7.188zM4.5 13a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0M15 15v-4H9.258l-4.015 4zM0 .5v12.495zm0 12.495V13z"
+        />
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+        />
+      </symbol>
+      <symbol id="i-book" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"
+        />
+      </symbol>
+      <symbol id="i-code-slash" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+        />
+      </symbol>
+      <symbol id="i-box-seam" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"
+        />
+      </symbol>
+      <symbol id="i-globe2" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855q-.215.403-.395.872c.705.157 1.472.257 2.282.287zM4.249 3.539q.214-.577.481-1.078a7 7 0 0 1 .597-.933A7 7 0 0 0 3.051 3.05q.544.277 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9 9 0 0 1-1.565-.667A6.96 6.96 0 0 0 1.018 7.5zm1.4-2.741a12.3 12.3 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.3 12.3 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.6 13.6 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696q.18.469.395.872c.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a7 7 0 0 1-.598-.933 9 9 0 0 1-.481-1.079 8.4 8.4 0 0 0-1.198.49 7 7 0 0 0 2.276 1.522zm-1.383-2.964A13.4 13.4 0 0 1 3.508 8.5h-2.49a6.96 6.96 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667m6.728 2.964a7 7 0 0 0 2.275-1.521 8.4 8.4 0 0 0-1.197-.49 9 9 0 0 1-.481 1.078 7 7 0 0 1-.597.933M8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855q.216-.403.395-.872A12.6 12.6 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.96 6.96 0 0 0 14.982 8.5h-2.49a13.4 13.4 0 0 1-.437 3.008M14.982 7.5a6.96 6.96 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461q.266.502.482 1.078a8.4 8.4 0 0 0 1.196-.49 7 7 0 0 0-2.275-1.52c.218.283.418.597.597.932m-.488 1.343a8 8 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"
+        />
+      </symbol>
+      <symbol id="i-layout-text-window" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M3 6.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"
+        />
+        <path
+          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v1H1V2a1 1 0 0 1 1-1zm1 3v10a1 1 0 0 1-1 1h-2V4zm-4 0v11H2a1 1 0 0 1-1-1V4z"
+        />
+      </symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          fill-rule="evenodd"
+          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+        />
+      </symbol>
+      <symbol id="i-circle-half" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16" />
+      </symbol>
+      <symbol id="i-clipboard" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"
+        />
+        <path
+          d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"
+        />
+      </symbol>
+      <symbol id="i-emoji-smile" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+        />
+        <path
+          d="M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5"
+        />
+      </symbol>
+      <symbol id="i-sun-fill" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"
+        />
+      </symbol>
+      <symbol id="i-caret-down-fill" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+        />
+      </symbol>
+      <symbol id="i-plugin" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          fill-rule="evenodd"
+          d="M1 8a7 7 0 1 1 2.898 5.673c-.167-.121-.216-.406-.002-.62l1.8-1.8a3.5 3.5 0 0 0 4.572-.328l1.414-1.415a.5.5 0 0 0 0-.707l-.707-.707 1.559-1.563a.5.5 0 1 0-.708-.706l-1.559 1.562-1.414-1.414 1.56-1.562a.5.5 0 1 0-.707-.706l-1.56 1.56-.707-.706a.5.5 0 0 0-.707 0L5.318 5.975a3.5 3.5 0 0 0-.328 4.571l-1.8 1.8c-.58.58-.62 1.6.121 2.137A8 8 0 1 0 0 8a.5.5 0 0 0 1 0"
+        />
+      </symbol>
+      <symbol id="i-three-dots" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+        />
+      </symbol>
+      <symbol id="i-x-lg" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+        />
+      </symbol>
+    </svg>
+
+    <input
+      type="checkbox"
+      id="menu-toggle"
+      class="menu-check"
+      aria-label="Toggle menu"
+    />
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo" aria-label="Home"
+          ><svg
+            width="40"
+            height="40"
+            viewBox="0 0 64 64"
+            role="img"
+            aria-label="Logo placeholder"
+          >
+            <rect width="64" height="64" rx="14" fill="#fff" />
+            <text
+              x="32"
+              y="46"
+              text-anchor="middle"
+              font-family="system-ui,Arial,sans-serif"
+              font-size="42"
+              font-weight="700"
+              fill="#712cf9"
+            >
+              B
+            </text>
+          </svg></a
+        >
+        <ul class="nav-links">
+          <li><a href="#install">Docs</a></li>
+          <li><a href="#variables">Examples</a></li>
+          <li><a href="#icons">Icons</a></li>
+          <li><a href="#footer">Blog</a></li>
+        </ul>
+        <div class="nav-search">
+          <svg class="icon" width="20" height="20" aria-hidden="true">
+            <use href="#i-search" /></svg
+          ><span>Search</span><kbd>CTRL K</kbd>
+        </div>
+        <div class="nav-right">
+          <a href="#" aria-label="GitHub"
+            ><svg class="icon" width="17" height="17" aria-hidden="true">
+              <use href="#i-github" /></svg
+          ></a>
+          <a href="#" aria-label="X"
+            ><svg class="icon" width="17" height="17" aria-hidden="true">
+              <use href="#i-twitter-x" /></svg
+          ></a>
+          <a href="#" aria-label="Open Collective"
+            ><svg class="icon" width="17" height="17" aria-hidden="true">
+              <use href="#i-opencollective" /></svg
+          ></a>
+          <span class="vline"></span
+          ><span class="ver"
+            >v5.3
+            <svg class="icon" width="10" height="10" aria-hidden="true">
+              <use href="#i-caret-down-fill" /></svg></span
+          ><span class="vline"></span>
+          <span class="theme"
+            ><svg class="icon" width="16" height="16" aria-hidden="true">
+              <use href="#i-sun-fill" />
+            </svg>
+            <svg class="icon" width="10" height="10" aria-hidden="true">
+              <use href="#i-caret-down-fill" /></svg
+          ></span>
+        </div>
+        <div class="nav-mobile">
+          <a href="#" aria-label="Search"
+            ><svg class="icon" width="18" height="18" aria-hidden="true">
+              <use href="#i-search" /></svg
+          ></a>
+          <label
+            for="menu-toggle"
+            class="nav-toggle"
+            role="button"
+            aria-label="Open menu"
+            ><svg class="icon" width="20" height="20" aria-hidden="true">
+              <use href="#i-three-dots" /></svg
+          ></label>
+        </div>
+      </div>
+    </nav>
+
+    <label for="menu-toggle" class="menu-backdrop" aria-hidden="true"></label>
+    <aside class="offcanvas-menu" aria-label="Main menu">
+      <div class="oc-head">
+        <strong>Bootstrap</strong
+        ><label
+          for="menu-toggle"
+          class="oc-close"
+          role="button"
+          aria-label="Close menu"
+          ><svg class="icon" width="16" height="16" aria-hidden="true">
+            <use href="#i-x-lg" /></svg
+        ></label>
+      </div>
+      <ul class="oc-grid">
+        <li><a href="#install">Docs</a></li>
+        <li><a href="#variables">Examples</a></li>
+        <li><a href="#icons">Icons</a></li>
+        <li><a href="#footer">Blog</a></li>
+      </ul>
+      <div class="oc-hr"></div>
+      <ul class="oc-grid">
+        <li>
+          <a href="#"
+            ><svg class="icon" width="14" height="14" aria-hidden="true">
+              <use href="#i-github" />
+            </svg>
+            GitHub</a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><svg class="icon" width="14" height="14" aria-hidden="true">
+              <use href="#i-twitter-x" />
+            </svg>
+            X</a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><svg class="icon" width="14" height="14" aria-hidden="true">
+              <use href="#i-opencollective" />
+            </svg>
+            Open Collective</a
+          >
+        </li>
+      </ul>
+      <div class="oc-hr"></div>
+      <div class="oc-item">
+        Bootstrap v5.3
+        <svg class="icon" width="9" height="9" aria-hidden="true">
+          <use href="#i-caret-down-fill" />
+        </svg>
+      </div>
+      <div class="oc-hr"></div>
+      <div class="oc-item">
+        <svg class="icon" width="14" height="14" aria-hidden="true">
+          <use href="#i-sun-fill" />
+        </svg>
+        Toggle theme
+        <svg class="icon" width="9" height="9" aria-hidden="true">
+          <use href="#i-caret-down-fill" />
+        </svg>
+      </div>
+    </aside>
+
+    <!-- 2. HERO -->
+    <header class="hero text-center">
+      <div class="container-xxl gutter">
+        <a href="#" class="pill mb-4"
+          >Get Security Updates for Bootstrap 3 &amp; 4
+          <svg class="icon" width="14" height="14" aria-hidden="true">
+            <use href="#i-arrow-right" /></svg
+        ></a>
+        <div>
+          <img
+            src="images/bootstrap-logo-shadow_2x.png"
+            alt="Logo"
+            class="hero-logo"
+          />
+        </div>
+        <h1 class="hero-title">Build fast, responsive sites with Bootstrap</h1>
+        <p class="hero-lead mx-auto">
+          Powerful, extensible, and feature-packed frontend toolkit. Build and
+          customize with Sass, utilize prebuilt grid system and components, and
+          bring projects to life with powerful JavaScript plugins.
+        </p>
+        <div class="hero-row">
+          <code class="code-box"
+            ><span
+              ><span class="muted">$</span>&nbsp;<span class="cmd">npm</span
+              >&nbsp;i bootstrap@5.3.8</span
+            >
+            <svg class="icon ms-4" width="18" height="18" aria-hidden="true">
+              <use href="#i-clipboard" /></svg
+          ></code>
+          <a href="#install" class="btn-purple"
+            ><svg class="icon" width="20" height="20" aria-hidden="true">
+              <use href="#i-book" />
+            </svg>
+            Read the docs</a
+          >
+        </div>
+        <p class="hero-meta">
+          Currently <strong>v5.3.8</strong> &middot;
+          <a href="#">Download</a> &middot; <a href="#">All releases</a>
+        </p>
+        <div class="ad-wrap">
+          <a class="ad" href="#">
+            <img
+              src="images/designdev.jpg"
+              alt="design.dev - The Newsletter For Creators"
+              width="139"
+              height="107"
+            />
+            <span
+              >Check out the latest remote job listings from the leading job
+              board for designers, developers, and creative pros.</span
+            >
+          </a>
+          <div class="ad-via">ads via Carbon</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section text-center" id="install">
+      <div class="container-xxl gutter">
+        <div class="mb-4">
+          <span class="badge-sq b-purple"
+            ><svg class="icon" width="38" height="38" aria-hidden="true">
+              <use href="#i-code-slash" /></svg
+          ></span>
+        </div>
+        <h2 class="section-title">Get started any way you want</h2>
+        <p class="section-lead mx-auto">
+          Jump right into building with Bootstrap&mdash;use the CDN, install it
+          via package manager, or download the source code.
+        </p>
+        <a href="#" class="link-blue link-cta"
+          >Read installation docs
+          <svg class="icon" width="20" height="20" aria-hidden="true">
+            <use href="#i-arrow-right" /></svg
+        ></a>
+      </div>
+    </section>
+
+    <!-- 4. INSTALL OPTIONS -->
+    <section class="install">
+      <div class="container-xxl gutter">
+        <div class="row g-0">
+          <div class="col-md-6 pe-md-5 pb-4 border-end-md">
+            <div class="ico-top">
+              <svg class="icon" width="36" height="36" aria-hidden="true">
+                <use href="#i-box-seam" />
+              </svg>
+            </div>
+            <h3 class="h-md">Install via package manager</h3>
+            <p class="text-muted">
+              Install Bootstrap's source Sass and JavaScript files via npm,
+              RubyGems, Composer, or Meteor. Package-managed installs don't
+              include documentation or our full build scripts. You can also
+              <a href="#" class="link-blue"
+                >use any demo from our Examples repo</a
+              >
+              to quickly jumpstart Bootstrap projects.
+            </p>
+            <a href="#" class="link-blue">Read our installation docs</a>
+            <span class="text-muted"
+              >for more info and additional package managers.</span
+            >
+          </div>
+          <div class="col-md-6 ps-md-5">
+            <div class="ico-top">
+              <svg class="icon" width="36" height="36" aria-hidden="true">
+                <use href="#i-globe2" />
+              </svg>
+            </div>
+            <h3 class="h-md">Include via CDN</h3>
+            <p class="text-muted">
+              When you only need to include Bootstrap's compiled CSS or JS, you
+              can use jsDelivr. See it in action with our simple
+              <a href="#" class="link-blue">quick start</a>, or
+              <a href="#" class="link-blue">browse the examples</a> to jumpstart
+              your next project. You can also choose to include Popper and our
+              JS <a href="#" class="link-blue">separately</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section text-center pt-4">
+      <div class="container-xxl gutter">
+        <h3 class="h4 fw-bold">Read our getting started guides</h3>
+        <p class="text-muted">
+          Get a jump on including Bootstrap's source files in a new project with
+          our official guides.
+        </p>
+        <div class="d-flex justify-content-center gap-4 mt-4">
+          <a href="#" class="guide"
+            ><img src="icons/webpack.svg" alt="" width="72" height="72" /><span
+              >Webpack</span
+            ></a
+          >
+          <a href="#" class="guide"
+            ><img src="images/parcel.png" alt="" width="72" height="72" /><span
+              >Parcel</span
+            ></a
+          >
+          <a href="#" class="guide"
+            ><img src="icons/vite.svg" alt="" width="72" height="72" /><span
+              >Vite</span
+            ></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="variables">
+      <div class="container-xxl gutter">
+        <span class="badge-sq b-pink mb-4"
+          ><svg class="icon" width="38" height="38" aria-hidden="true">
+            <use href="#i-braces" /></svg
+        ></span>
+        <h2 class="section-title">
+          Build and extend in real-time with CSS variables
+        </h2>
+        <p class="section-lead">
+          Bootstrap 5 is evolving with each release to better utilize CSS
+          variables for global theme styles, individual components, and even
+          utilities. We provide dozens of variables for colors, font styles, and
+          more at a <code>:root</code> level for use anywhere. On components and
+          utilities, CSS variables are scoped to the relevant class and can
+          easily be modified.
+        </p>
+        <a href="#" class="link-blue link-cta"
+          >Learn more about CSS variables
+          <svg class="icon" width="20" height="20" aria-hidden="true">
+            <use href="#i-arrow-right" /></svg
+        ></a>
+
+        <div class="row g-5 mt-1">
+          <div class="col-md-6">
+            <h3 class="h-md">Using CSS variables</h3>
+            <p>
+              Use any of our
+              <a href="#" class="link-blue"
+                >global <code>:root</code> variables</a
+              >
+              to write new styles. CSS variables use the
+              <code>var(--bs-variableName)</code> syntax and can be inherited by
+              children elements.
+            </p>
+            <div class="code-wrap">
+              <span class="copy-ico"
+                ><svg class="icon" width="18" height="18" aria-hidden="true">
+                  <use href="#i-clipboard" /></svg
+              ></span>
+              <pre
+                class="code-block"
+              ><code><span class="tk-sel">.component</span> {
+  <span class="tk-prop">color</span>: <span class="tk-var">var(--bs-gray-800)</span>;
+  <span class="tk-prop">background-color</span>: <span class="tk-var">var(--bs-gray-100)</span>;
+  <span class="tk-prop">border</span>: 1px solid <span class="tk-var">var(--bs-gray-200)</span>;
+  <span class="tk-prop">border-radius</span>: .25rem;
+}
+
+<span class="tk-sel">.component-header</span> {
+  <span class="tk-prop">color</span>: <span class="tk-var">var(--bs-purple)</span>;
+}</code></pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h-md">Customizing via CSS variables</h3>
+            <p>
+              Override global, component, or utility class variables to
+              customize Bootstrap just how you like. No need to redeclare each
+              rule, just a new variable value.
+            </p>
+            <div class="code-wrap">
+              <span class="copy-ico"
+                ><svg class="icon" width="18" height="18" aria-hidden="true">
+                  <use href="#i-clipboard" /></svg
+              ></span>
+              <pre class="code-block"><code><span class="tk-sel">body</span> {
+  <span class="tk-var2">--bs-body-font-family</span>: <span class="tk-var">var(--bs-font-monospace)</span>;
+  <span class="tk-var2">--bs-body-line-height</span>: 1.4;
+  <span class="tk-var2">--bs-body-bg</span>: <span class="tk-var">var(--bs-gray-100)</span>;
+}
+
+<span class="tk-sel">.table</span> {
+  <span class="tk-var2">--bs-table-color</span>: <span class="tk-var">var(--bs-gray-600)</span>;
+  <span class="tk-var2">--bs-table-bg</span>: <span class="tk-var">var(--bs-gray-100)</span>;
+  <span class="tk-var2">--bs-table-border-color</span>: transparent;
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-0">
+      <div class="container-xxl gutter">
+        <span class="badge-sq b-yellow mb-4"
+          ><svg class="icon" width="40" height="40" aria-hidden="true">
+            <use href="#i-plugin" /></svg
+        ></span>
+        <h2 class="section-title">
+          Powerful JavaScript plugins without jQuery
+        </h2>
+        <p class="section-lead">
+          Add toggleable hidden elements, modals and offcanvas menus, popovers
+          and tooltips, and so much more&mdash;all without jQuery. Bootstrap's
+          JavaScript is HTML-first, meaning most plugins are added with data
+          attributes.
+        </p>
+        <div class="row g-5 mt-1">
+          <div class="col-md-6">
+            <h3 class="h-md">Data attribute API</h3>
+            <p class="text-muted">
+              Why write more JavaScript when you can write HTML? Nearly all
+              plugins feature a first-class data API, allowing you to add
+              behavior straight from your markup.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h-md">Comprehensive set of plugins</h3>
+            <div class="row g-3">
+              <div class="col-6">
+                <h4 class="h6 mb-1">Alert</h4>
+                <p class="small text-muted">
+                  Show and hide alert messages to your users.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Button</h4>
+                <p class="small text-muted">
+                  Programmatically control the active state for buttons.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Carousel</h4>
+                <p class="small text-muted">
+                  Add slideshows to any page, including support for crossfade.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Collapse</h4>
+                <p class="small text-muted">
+                  Expand and collapse areas of content, or create accordions.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Dropdown</h4>
+                <p class="small text-muted">
+                  Create menus for links, actions, forms, and more.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Modal</h4>
+                <p class="small text-muted">
+                  Add flexible and adaptive dialogs to your project.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Offcanvas</h4>
+                <p class="small text-muted">
+                  Build and toggle hidden sidebars into any page.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Popover</h4>
+                <p class="small text-muted">Create custom overlays.</p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Scrollspy</h4>
+                <p class="small text-muted">
+                  Automatically update nav links based on page scroll.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Tab</h4>
+                <p class="small text-muted">
+                  Allow nav components to toggle contents.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Toast</h4>
+                <p class="small text-muted">
+                  Show and hide notifications to your visitors.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 class="h6 mb-1">Tooltip</h4>
+                <p class="small text-muted">
+                  Replace browser tooltips with custom ones.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="icons">
+      <div class="container-xxl gutter">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="badge-sq b-green mb-4"
+              ><svg class="icon" width="40" height="40" aria-hidden="true">
+                <use href="#i-emoji-smile" /></svg
+            ></span>
+            <h2 class="section-title">Personalize it with Bootstrap Icons</h2>
+            <p class="section-lead">
+              <a href="#" class="link-blue">Bootstrap Icons</a> is an open
+              source SVG icon library featuring over 1,800 glyphs, with more
+              added every release. They're designed to work in any project,
+              whether you use Bootstrap itself or not. Use them as SVGs or icon
+              fonts&mdash;both options give you vector scaling and easy
+              customization via CSS.
+            </p>
+            <a href="https://icons.getbootstrap.com/" class="link-blue link-cta"
+              >Get Bootstrap Icons
+              <svg class="icon" width="16" height="16" aria-hidden="true">
+                <use href="#i-arrow-right" /></svg
+            ></a>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="images/bootstrap-icons_2x.png"
+              alt="Grid of icons"
+              class="icons-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="container-xxl footer-wrap">
+        <div class="row g-4">
+          <div class="col-lg-3">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 64 64"
+                role="img"
+                aria-label="Logo placeholder"
+              >
+                <rect width="64" height="64" rx="14" fill="#111" />
+                <text
+                  x="32"
+                  y="46"
+                  text-anchor="middle"
+                  font-family="system-ui,Arial,sans-serif"
+                  font-size="42"
+                  font-weight="700"
+                  fill="#fff"
+                >
+                  B
+                </text></svg
+              ><span class="fs-5">Bootstrap</span>
+            </div>
+            <p class="small text-muted">
+              Designed and built with all the love in the world. Practice
+              project built for learning.
+            </p>
+            <p class="small text-muted">Currently v5.3.8.</p>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1">
+            <h5 class="h6 footer-h">Links</h5>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Docs</a></li>
+              <li><a href="#">Examples</a></li>
+              <li><a href="#">Icons</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Swag Store</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5 class="h6 footer-h">Guides</h5>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Getting started</a></li>
+              <li><a href="#">Starter template</a></li>
+              <li><a href="#">Webpack</a></li>
+              <li><a href="#">Parcel</a></li>
+              <li><a href="#">Vite</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5 class="h6 footer-h">Projects</h5>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Version 5</a></li>
+              <li><a href="#">Version 4</a></li>
+              <li><a href="#">Icons</a></li>
+              <li><a href="#">RFS</a></li>
+              <li><a href="#">Examples repo</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5 class="h6 footer-h">Community</h5>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Issues</a></li>
+              <li><a href="#">Discussions</a></li>
+              <li><a href="#">Corporate sponsors</a></li>
+              <li><a href="#">Open Collective</a></li>
+              <li><a href="#">Stack Overflow</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
