@@ -115,24 +115,18 @@
           d="M1 8a7 7 0 1 1 2.898 5.673c-.167-.121-.216-.406-.002-.62l1.8-1.8a3.5 3.5 0 0 0 4.572-.328l1.414-1.415a.5.5 0 0 0 0-.707l-.707-.707 1.559-1.563a.5.5 0 1 0-.708-.706l-1.559 1.562-1.414-1.414 1.56-1.562a.5.5 0 1 0-.707-.706l-1.56 1.56-.707-.706a.5.5 0 0 0-.707 0L5.318 5.975a3.5 3.5 0 0 0-.328 4.571l-1.8 1.8c-.58.58-.62 1.6.121 2.137A8 8 0 1 0 0 8a.5.5 0 0 0 1 0"
         />
       </symbol>
-      <symbol id="i-three-dots" viewBox="0 0 16 16" fill="currentColor">
-        <path
-          d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
-        />
-      </symbol>
       <symbol id="i-x-lg" viewBox="0 0 16 16" fill="currentColor">
         <path
           d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
         />
       </symbol>
+      <symbol id="i-hamburger" viewBox="0 0 16 16" fill="currentColor">
+        <rect x="2" y="3" width="12" height="1.5" rx=".75" />
+        <rect x="2" y="7.25" width="12" height="1.5" rx=".75" />
+        <rect x="2" y="11.5" width="12" height="1.5" rx=".75" />
+      </symbol>
     </svg>
 
-    <input
-      type="checkbox"
-      id="menu-toggle"
-      class="menu-check"
-      aria-label="Toggle menu"
-    />
     <nav class="site-nav">
       <div class="nav-inner">
         <a href="#" class="nav-logo" aria-label="Home"
@@ -200,30 +194,42 @@
             ><svg class="icon" width="18" height="18" aria-hidden="true">
               <use href="#i-search" /></svg
           ></a>
-          <label
-            for="menu-toggle"
+          <button
+            type="button"
             class="nav-toggle"
-            role="button"
+            id="menu-open"
             aria-label="Open menu"
-            ><svg class="icon" width="20" height="20" aria-hidden="true">
-              <use href="#i-three-dots" /></svg
-          ></label>
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <svg class="icon" width="26" height="26" aria-hidden="true">
+              <use href="#i-hamburger" />
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
 
-    <label for="menu-toggle" class="menu-backdrop" aria-hidden="true"></label>
-    <aside class="offcanvas-menu" aria-label="Main menu">
+    <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
+    <aside
+      class="offcanvas-menu"
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Main menu"
+    >
       <div class="oc-head">
         <strong>Bootstrap</strong
-        ><label
-          for="menu-toggle"
+        ><button
+          type="button"
           class="oc-close"
-          role="button"
+          id="menu-close"
           aria-label="Close menu"
-          ><svg class="icon" width="16" height="16" aria-hidden="true">
-            <use href="#i-x-lg" /></svg
-        ></label>
+        >
+          <svg class="icon" width="16" height="16" aria-hidden="true">
+            <use href="#i-x-lg" />
+          </svg>
+        </button>
       </div>
       <ul class="oc-grid">
         <li><a href="#install">Docs</a></li>
@@ -277,7 +283,6 @@
       </div>
     </aside>
 
-    <!-- 2. HERO -->
     <header class="hero text-center">
       <div class="container-xxl gutter">
         <a href="#" class="pill mb-4"
@@ -357,7 +362,6 @@
       </div>
     </section>
 
-    <!-- 4. INSTALL OPTIONS -->
     <section class="install">
       <div class="container-xxl gutter">
         <div class="row g-0">
@@ -725,5 +729,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="index.js"></script>
   </body>
 </html>

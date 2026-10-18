@@ -1,3 +1,4 @@
+/* ===== Base ===== */
 :root {
   --purple: #712cf9;
   --purple-dark: #5a1fd1;
@@ -72,6 +73,7 @@ body {
   }
 }
 
+/* ===== Navbar: 68px tall ===== */
 .site-nav {
   position: sticky;
   top: 0;
@@ -172,6 +174,7 @@ body {
   }
 }
 
+/* ===== Hero ===== */
 .hero {
   padding: 52px 0 48px;
   background:
@@ -281,6 +284,7 @@ body {
   color: #495057;
 }
 
+/* ===== Badges ===== */
 .badge-sq {
   display: inline-flex;
   align-items: center;
@@ -323,6 +327,7 @@ body {
   color: #495057;
 }
 
+/* ===== Guides ===== */
 .guide {
   display: flex;
   flex-direction: column;
@@ -343,6 +348,7 @@ body {
   display: block;
 }
 
+/* ===== Footer ===== */
 .footer {
   background: #f8f9fa;
   padding: 6rem 0 5rem;
@@ -377,6 +383,7 @@ body {
   }
 }
 
+/* plugin names bold like the original */
 .section h4.h6 {
   font-weight: 700;
   color: #000;
@@ -386,6 +393,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* ===== Ad card under the hero ===== */
 .ad-wrap {
   width: 426px;
   max-width: 100%;
@@ -422,6 +430,7 @@ body {
   margin-top: 0.6rem;
 }
 
+/* ===== Responsive safety (no sideways scrolling) ===== */
 html {
   max-width: 100%;
   scroll-padding-top: 80px;
@@ -498,6 +507,7 @@ body {
   }
 }
 
+/* ===== CSS variables section: code blocks ===== */
 .code-wrap {
   position: relative;
   margin-top: 1.25rem;
@@ -537,23 +547,27 @@ body {
   color: #0a58ca;
 }
 
+/* left-aligned section headings wrap like the original */
 .section:not(.text-center) .section-title {
   max-width: 55rem;
 }
 
-.menu-check {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  width: 0;
-  height: 0;
+/* ===== Mobile menu: slide-in panel (opened by script.js adding .menu-open to <body>) ===== */
+.nav-toggle,
+.oc-close {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
 }
 .nav-mobile,
 .offcanvas-menu,
 .menu-backdrop {
   display: none;
 }
-.menu-check:focus-visible ~ .site-nav .nav-toggle {
+.nav-toggle:focus-visible,
+.oc-close:focus-visible {
   outline: 2px solid #fff;
   border-radius: 6px;
 }
@@ -624,15 +638,15 @@ body {
       visibility 0.3s;
     z-index: 1045;
   }
-  .menu-check:checked ~ .menu-backdrop {
+  body.menu-open .menu-backdrop {
     opacity: 1;
     visibility: visible;
   }
-  .menu-check:checked ~ .offcanvas-menu {
+  body.menu-open .offcanvas-menu {
     transform: none;
     visibility: visible;
   }
-  body:has(.menu-check:checked) {
+  body.menu-open {
     overflow: hidden;
   }
 
